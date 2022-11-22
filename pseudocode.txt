@@ -1,4 +1,12 @@
 CREATING A CALCULATOR
 
 1.CREATE HTML
-2.
+2.CREATE CSS
+
+3. NOW WHAT?
+JavaScript. Add all those buttons to JS. What then? Make them react.
+Let's start with:
+    I want display to show 1 when I click 1.
+    Button must listen to me clicking it and change the value on the display.
+
+    !! Finish on changing names of classes and IDs
