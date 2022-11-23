@@ -13,7 +13,7 @@ class Calculator {
 
   appendNumber(number) {
     if (number === "." && this.currentOperand.includes(".")) return;
-    this.currentOperand = number;
+    this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
   chooseOperation(operation) {
@@ -31,11 +31,34 @@ class Calculator {
     const prev = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
     if (isNaN(prev) || isNaN(current)) return;
+    switch (this.operation) {
+      case "+":
+        computation = prev + current;
+        break;
+      case "-":
+        computation = prev - current;
+        break;
+      case "*":
+        computation = prev * current;
+        break;
+      case "÷":
+        computation = prev / current;
+        break;
+      default:
+        return;
+    }
+    this.currentOperand = computation;
+    this.operation = undefined;
+    this.previousOperand = "";
   }
+
+  getDisplayNumber(number)
 
   updateDisplay() {
     this.currentOperandTextElement.innerText = this.currentOperand;
-    this.previousOperandTextElement.innerText = this.previousOperand;
+    if (this.operation != null) {
+      this.previousOperandTextElement.innerText = `${this.previousOperand} ${this.operation}`;
+    }
   }
 }
 
@@ -67,5 +90,10 @@ operationButtons.forEach((button) => {
 
 equalSign.addEventListener("click", () => {
   calculator.compute();
+  calculator.updateDisplay();
+});
+
+clear.addEventListener("click", () => {
+  calculator.clear();
   calculator.updateDisplay();
 });
