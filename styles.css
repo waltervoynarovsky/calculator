@@ -6,14 +6,14 @@
 
 .output {
   display: flex;
-  justify-content: end;
-  align-items: center;
   margin: auto;
   padding: auto;
   height: 15vh;
   font-size: 3rem;
   color: #f6f6f6;
   margin-right: 3%;
+  align-items: flex-end;
+  justify-content: end;
 }
 
 button {
@@ -49,46 +49,46 @@ button {
   grid-area: 1/4/2/5;
   background-color: #ff9c11;
 }
-.elements .number7 {
+.elements #number7 {
   grid-area: 2/1/3/2;
 }
-.elements .number8 {
+.elements #number8 {
   grid-area: 2/2/3/3;
 }
-.elements .number9 {
+.elements #number9 {
   grid-area: 2/3/3/4;
 }
 .elements .multiplication {
   grid-area: 2/4/3/5;
   background-color: #ff9c11;
 }
-.elements .number4 {
+.elements #number4 {
   grid-area: 3/1/4/2;
 }
-.elements .number5 {
+.elements #number5 {
   grid-area: 3/2/4/3;
 }
-.elements .number6 {
+.elements #number6 {
   grid-area: 3/3/4/4;
 }
 .elements .minus {
   grid-area: 3/4/4/5;
   background-color: #ff9c11;
 }
-.elements .number1 {
+.elements #number1 {
   grid-area: 4/1/5/2;
 }
-.elements .number2 {
+.elements #number2 {
   grid-area: 4/2/5/3;
 }
-.elements .number3 {
+.elements #number3 {
   grid-area: 4/3/5/4;
 }
 .elements .plus {
   grid-area: 4/4/5/5;
   background-color: #ff9c11;
 }
-.elements .number0 {
+.elements #number0 {
   grid-area: 5/1/6/3;
   border-radius: 20%;
 }
