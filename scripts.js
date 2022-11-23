@@ -44,6 +44,9 @@ class Calculator {
       case "÷":
         computation = prev / current;
         break;
+      case "%":
+        computation = current * 0.1;
+        break;
       default:
         return;
     }
@@ -78,7 +81,7 @@ const equalSign = document.querySelector(".equal");
 const clear = document.querySelector(".clear");
 const previousNumberTextElement = document.querySelector(".previous-number");
 const currentNumberTextElement = document.querySelector(".current-number");
-
+const plusminus = document.querySelector("#plusminus");
 const calculator = new Calculator(
   previousNumberTextElement,
   currentNumberTextElement
@@ -106,4 +109,10 @@ equalSign.addEventListener("click", () => {
 clear.addEventListener("click", () => {
   calculator.clear();
   calculator.updateDisplay();
+});
+
+plusminus.addEventListener("click", () => {
+  if (currentNumberTextElement > 0) {
+    currentNumberTextElement.unshift("-");
+  }
 });
