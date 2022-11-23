@@ -52,12 +52,22 @@ class Calculator {
     this.previousNumber = "";
   }
 
-  getDisplayNumber(number)
+  getDisplayNumber(number) {
+    const floatNumber = parseFloat(number);
+    if (isNaN(floatNumber)) return "";
+    return floatNumber.toLocaleString("en");
+  }
 
-  updateDisplay(){
-    this.currentNumberTextElement.innerText = this.currentNumber;
+  updateDisplay() {
+    this.currentNumberTextElement.innerText = this.getDisplayNumber(
+      this.currentNumber
+    );
     if (this.operation != null) {
-      this.previousNumberTextElement.innerText = `${this.previousNumber} ${this.operation}`;
+      this.previousNumberTextElement.innerText = `${this.getDisplayNumber(
+        this.previousNumber
+      )} ${this.operation}`;
+    } else {
+      this.previousNumberTextElement.innerText = "";
     }
   }
 }
