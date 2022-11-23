@@ -1,35 +1,35 @@
 class Calculator {
-  constructor(previousOperandTextElement, currentOperandTextElement) {
-    this.previousOperandTextElement = previousOperandTextElement;
-    this.currentOperandTextElement = currentOperandTextElement;
+  constructor(previousNumberTextElement, currentNumberTextElement) {
+    this.previousNumberTextElement = previousNumberTextElement;
+    this.currentNumberTextElement = currentNumberTextElement;
     this.clear();
   }
 
   clear() {
-    this.currentOperand = "";
-    this.previousOperand = "";
+    this.currentNumber = "";
+    this.previousNumber = "";
     this.operation = undefined;
   }
 
   appendNumber(number) {
-    if (number === "." && this.currentOperand.includes(".")) return;
-    this.currentOperand = this.currentOperand.toString() + number.toString();
+    if (number === "." && this.currentNumber.includes(".")) return;
+    this.currentNumber = this.currentNumber.toString() + number.toString();
   }
 
   chooseOperation(operation) {
-    if (this.currentOperand === "") return;
-    if (this.previousOperand !== "") {
+    if (this.currentNumber === "") return;
+    if (this.previousNumber !== "") {
       this.compute();
     }
     this.operation = operation;
-    this.previousOperand = this.currentOperand;
-    this.currentOperand = "";
+    this.previousNumber = this.currentNumber;
+    this.currentNumber = "";
   }
 
   compute() {
     let computation;
-    const prev = parseFloat(this.previousOperand);
-    const current = parseFloat(this.currentOperand);
+    const prev = parseFloat(this.previousNumber);
+    const current = parseFloat(this.currentNumber);
     if (isNaN(prev) || isNaN(current)) return;
     switch (this.operation) {
       case "+":
@@ -47,17 +47,17 @@ class Calculator {
       default:
         return;
     }
-    this.currentOperand = computation;
+    this.currentNumber = computation;
     this.operation = undefined;
-    this.previousOperand = "";
+    this.previousNumber = "";
   }
 
   getDisplayNumber(number)
 
-  updateDisplay() {
-    this.currentOperandTextElement.innerText = this.currentOperand;
+  updateDisplay(){
+    this.currentNumberTextElement.innerText = this.currentNumber;
     if (this.operation != null) {
-      this.previousOperandTextElement.innerText = `${this.previousOperand} ${this.operation}`;
+      this.previousNumberTextElement.innerText = `${this.previousNumber} ${this.operation}`;
     }
   }
 }
@@ -66,12 +66,12 @@ const numberButtons = document.querySelectorAll(".number");
 const operationButtons = document.querySelectorAll(".function");
 const equalSign = document.querySelector(".equal");
 const clear = document.querySelector(".clear");
-const previousOperandTextElement = document.querySelector(".previous-operand");
-const currentOperandTextElement = document.querySelector(".current-operand");
+const previousNumberTextElement = document.querySelector(".previous-number");
+const currentNumberTextElement = document.querySelector(".current-number");
 
 const calculator = new Calculator(
-  previousOperandTextElement,
-  currentOperandTextElement
+  previousNumberTextElement,
+  currentNumberTextElement
 );
 
 numberButtons.forEach((button) => {

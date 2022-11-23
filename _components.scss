@@ -1,15 +1,26 @@
 @use "./variables" as *;
 
 .output {
-  display: flex;
+  display: grid;
   margin: auto;
   padding: auto;
   height: 15vh;
   font-size: 3rem;
   color: $color-white;
   margin-right: 3%;
-  align-items: flex-end;
-  justify-content: end;
+  text-align: right;
+
+  .previous-operand {
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+  }
+
+  .current-operand {
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+  }
 }
 
 button {

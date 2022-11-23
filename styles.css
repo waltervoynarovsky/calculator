@@ -5,13 +5,22 @@
 }
 
 .output {
-  display: flex;
+  display: grid;
   margin: auto;
   padding: auto;
   height: 15vh;
   font-size: 3rem;
   color: #f6f6f6;
   margin-right: 3%;
+  text-align: right;
+}
+.output .previous-operand {
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+}
+.output .current-operand {
+  display: flex;
   align-items: flex-end;
   justify-content: end;
 }
