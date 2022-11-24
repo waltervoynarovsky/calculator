@@ -1,3 +1,10 @@
+const numberButtons = document.querySelectorAll(".number");
+const operationButtons = document.querySelectorAll(".function");
+const equalSign = document.querySelector(".equal");
+const clear = document.querySelector(".clear");
+const previousNumberTextElement = document.querySelector(".previous-number");
+const currentNumberTextElement = document.querySelector(".current-number");
+const plusminus = document.querySelector("#plusminus");
 class Calculator {
   constructor(previousNumberTextElement, currentNumberTextElement) {
     this.previousNumberTextElement = previousNumberTextElement;
@@ -76,14 +83,6 @@ class Calculator {
     }
   }
 }
-
-const numberButtons = document.querySelectorAll(".number");
-const operationButtons = document.querySelectorAll(".function");
-const equalSign = document.querySelector(".equal");
-const clear = document.querySelector(".clear");
-const previousNumberTextElement = document.querySelector(".previous-number");
-const currentNumberTextElement = document.querySelector(".current-number");
-const plusminus = document.querySelector("#plusminus");
 const calculator = new Calculator(
   previousNumberTextElement,
   currentNumberTextElement
