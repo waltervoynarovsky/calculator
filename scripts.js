@@ -2,7 +2,6 @@ class Calculator {
   constructor(previousNumberTextElement, currentNumberTextElement) {
     this.previousNumberTextElement = previousNumberTextElement;
     this.currentNumberTextElement = currentNumberTextElement;
-    this.clear();
   }
 
   clear() {
@@ -62,15 +61,15 @@ class Calculator {
   }
 
   updateDisplay() {
-    this.currentNumberTextElement.innerText = this.getDisplayNumber(
+    this.currentNumberTextElement.innerHTML = this.getDisplayNumber(
       this.currentNumber
     );
     if (this.operation != null) {
-      this.previousNumberTextElement.innerText = `${this.getDisplayNumber(
+      this.previousNumberTextElement.innerHTML = `${this.getDisplayNumber(
         this.previousNumber
       )} ${this.operation}`;
     } else {
-      this.previousNumberTextElement.innerText = "";
+      this.previousNumberTextElement.innerHTML = "";
     }
   }
 }
@@ -89,14 +88,14 @@ const calculator = new Calculator(
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    calculator.appendNumber(button.innerText);
-    calculator.updateDisplay(button.innerText);
+    calculator.appendNumber(button.innerHTML);
+    calculator.updateDisplay(button.innerHTML);
   });
 });
 
 operationButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    calculator.chooseOperation(button.innerText);
+    calculator.chooseOperation(button.innerHTML);
     calculator.updateDisplay();
   });
 });
