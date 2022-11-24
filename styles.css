@@ -15,12 +15,12 @@
   text-align: right;
   align-items: center;
 }
-.output .previous-operand {
+.output .previous-number {
   display: flex;
   align-items: flex-end;
   justify-content: end;
 }
-.output .current-operand {
+.output .current-number {
   display: flex;
   align-items: flex-end;
   justify-content: end;
