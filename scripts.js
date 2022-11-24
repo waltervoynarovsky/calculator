@@ -44,7 +44,10 @@ class Calculator {
         computation = prev / current;
         break;
       case "%":
-        computation = current * 0.1;
+        computation = (prev / current) * 100 + "%";
+        break;
+      case "-/+":
+        computation = current * -1;
         break;
       default:
         return;
