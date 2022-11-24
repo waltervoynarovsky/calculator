@@ -112,9 +112,3 @@ clear.addEventListener("click", () => {
   calculator.clear();
   calculator.updateDisplay();
 });
-
-plusminus.addEventListener("click", () => {
-  if (currentNumberTextElement > 0) {
-    currentNumberTextElement.unshift("-");
-  }
-});
