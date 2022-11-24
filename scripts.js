@@ -50,12 +50,12 @@ class Calculator {
       case "÷":
         computation = prev / current;
         break;
-      case "%":
-        computation = (prev / current) * 100 + "%";
-        break;
-      case "-/+":
-        computation = current * -1;
-        break;
+      // case "%":
+      //   computation = (prev / current) * 100 + "%";
+      //   break;
+      // case "-/+":
+      //   computation = current * -1;
+      //   break;
       default:
         return;
     }
